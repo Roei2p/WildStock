@@ -212,7 +212,7 @@ export default function App() {
   const completedItemsCount = queue.filter((i) => i.status === 'completed').length;
 
   return (
-    <div className="min-h-screen bg-zinc-100 text-zinc-900 flex flex-col font-sans selection:bg-emerald-500 selection:text-white">
+    <div className="min-h-screen bg-stone-100 text-stone-900 flex flex-col font-sans selection:bg-gold-400 selection:text-brand-950">
       {/* Top Navigation */}
       <Header
         onOpenN8nModal={() => setIsN8nModalOpen(true)}
@@ -268,20 +268,20 @@ export default function App() {
                 onUpdateMetadata={handleUpdateMetadata}
               />
             ) : selectedItem?.status === 'analyzing' ? (
-              <div className="bg-white rounded-2xl p-12 border border-zinc-200 shadow-sm text-center flex flex-col items-center justify-center space-y-4">
-                <div className="w-16 h-16 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 animate-pulse">
+              <div className="bg-white rounded-2xl p-12 border border-stone-200 shadow-sm text-center flex flex-col items-center justify-center space-y-4">
+                <div className="w-16 h-16 rounded-2xl bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-600 animate-pulse">
                   <Bird className="w-8 h-8 animate-bounce" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-zinc-900">
+                  <h4 className="text-base font-bold text-stone-900">
                     Analyzing Wildlife & Raptors with Gemini 3.8 Flash
                   </h4>
-                  <p className="text-xs text-zinc-500 max-w-sm mx-auto mt-1">
+                  <p className="text-xs text-stone-500 max-w-sm mx-auto mt-1">
                     Verifying exact avian taxonomy, lighting, composition, and generating 30–45 microstock keywords...
                   </p>
                 </div>
-                <div className="w-48 bg-zinc-100 rounded-full h-1.5 overflow-hidden">
-                  <div className="bg-emerald-500 h-1.5 rounded-full animate-indeterminate"></div>
+                <div className="w-48 bg-stone-100 rounded-full h-1.5 overflow-hidden">
+                  <div className="bg-brand-500 h-1.5 rounded-full animate-indeterminate"></div>
                 </div>
               </div>
             ) : selectedItem?.status === 'error' ? (
@@ -303,16 +303,16 @@ export default function App() {
               </div>
             ) : (
               /* Fresh state prompt */
-              <div className="bg-white rounded-2xl p-8 sm:p-12 border border-zinc-200 shadow-sm text-center space-y-6">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-emerald-100 to-teal-100 text-emerald-700 flex items-center justify-center mx-auto shadow-sm">
+              <div className="bg-white rounded-2xl p-8 sm:p-12 border border-stone-200 shadow-sm text-center space-y-6">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-brand-100 to-gold-100 text-brand-700 flex items-center justify-center mx-auto shadow-sm">
                   <Bird className="w-8 h-8 stroke-[2.2]" />
                 </div>
 
                 <div className="max-w-md mx-auto space-y-2">
-                  <h3 className="text-lg font-bold text-zinc-900">
+                  <h3 className="font-display text-xl font-semibold text-stone-900">
                     Ready for Microstock Wildlife Analysis
                   </h3>
-                  <p className="text-xs text-zinc-500 leading-relaxed">
+                  <p className="text-xs text-stone-500 leading-relaxed">
                     Upload bird of prey or nature photos, or click any sample on the left to start the automated pipeline.
                     Strict compliance with <strong>Shutterstock, Adobe Stock, and Freepik</strong> specifications.
                   </p>
@@ -324,9 +324,9 @@ export default function App() {
                     id="btn-empty-test-sample"
                     type="button"
                     onClick={() => handleSampleSelected(SAMPLE_WILDLIFE_IMAGES[0])}
-                    className="flex items-center gap-2 px-4 py-2.5 text-xs font-bold rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm shadow-emerald-600/20 transition-all"
+                    className="flex items-center gap-2 px-4 py-2.5 text-xs font-bold rounded-xl bg-brand-600 hover:bg-brand-700 text-white shadow-sm shadow-brand-600/20 transition-all"
                   >
-                    <Sparkles className="w-4 h-4 text-emerald-200" />
+                    <Sparkles className="w-4 h-4 text-brand-200" />
                     <span>Test With Bald Eagle Sample</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
@@ -335,30 +335,30 @@ export default function App() {
                     id="btn-empty-open-n8n"
                     type="button"
                     onClick={() => setIsN8nModalOpen(true)}
-                    className="flex items-center gap-2 px-4 py-2.5 text-xs font-semibold rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-700 transition-colors"
+                    className="flex items-center gap-2 px-4 py-2.5 text-xs font-semibold rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 transition-colors"
                   >
-                    <Workflow className="w-4 h-4 text-emerald-600" />
+                    <Workflow className="w-4 h-4 text-brand-600" />
                     <span>Explore n8n Integration</span>
                   </button>
                 </div>
 
                 {/* Microstock compliance checklist preview */}
-                <div className="pt-6 border-t border-zinc-100 grid grid-cols-1 sm:grid-cols-3 gap-3 text-left text-xs text-zinc-600">
-                  <div className="p-3 bg-zinc-50 rounded-xl border border-zinc-200/80">
-                    <span className="font-semibold text-zinc-900 block mb-1">5 to 15 Words Title</span>
-                    <span className="text-[11px] text-zinc-500">
+                <div className="pt-6 border-t border-stone-100 grid grid-cols-1 sm:grid-cols-3 gap-3 text-left text-xs text-stone-600">
+                  <div className="p-3 bg-stone-50 rounded-xl border border-stone-200/80">
+                    <span className="font-semibold text-stone-900 block mb-1">5 to 15 Words Title</span>
+                    <span className="text-[11px] text-stone-500">
                       Engaging, keyword-rich, highlighting behavior and natural environment.
                     </span>
                   </div>
-                  <div className="p-3 bg-zinc-50 rounded-xl border border-zinc-200/80">
-                    <span className="font-semibold text-zinc-900 block mb-1">25 to 50 Words Desc</span>
-                    <span className="text-[11px] text-zinc-500">
+                  <div className="p-3 bg-stone-50 rounded-xl border border-stone-200/80">
+                    <span className="font-semibold text-stone-900 block mb-1">25 to 50 Words Desc</span>
+                    <span className="text-[11px] text-stone-500">
                       Details action, lighting, composition, and commercial viability.
                     </span>
                   </div>
-                  <div className="p-3 bg-zinc-50 rounded-xl border border-zinc-200/80">
-                    <span className="font-semibold text-zinc-900 block mb-1">30 to 45 Keywords</span>
-                    <span className="text-[11px] text-zinc-500">
+                  <div className="p-3 bg-stone-50 rounded-xl border border-stone-200/80">
+                    <span className="font-semibold text-stone-900 block mb-1">30 to 45 Keywords</span>
+                    <span className="text-[11px] text-stone-500">
                       Scientific classification, common names, behavior, and buyer search terms.
                     </span>
                   </div>

@@ -56,27 +56,27 @@ export const AutomationNodeGraph: React.FC<AutomationNodeGraphProps> = ({
   ];
 
   return (
-    <div id="automation-pipeline-container" className="bg-zinc-900 text-zinc-100 rounded-2xl p-4 sm:p-5 border border-zinc-800 shadow-sm relative overflow-hidden">
+    <div id="automation-pipeline-container" className="bg-stone-900 text-stone-100 rounded-2xl p-4 sm:p-5 border border-stone-800 shadow-sm relative overflow-hidden">
       {/* Background subtle grid pattern */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
       {/* Header bar */}
       <div className="flex flex-wrap items-center justify-between gap-3 mb-4 relative z-10">
         <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+          <div className="w-7 h-7 rounded-lg bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-400">
             <Workflow className="w-4 h-4" />
           </div>
           <div>
             <h3 className="text-sm font-semibold text-white flex items-center gap-2">
               n8n-Compatible Automation Pipeline
               {currentStage !== 'idle' && (
-                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-medium bg-emerald-950 text-emerald-300 border border-emerald-800">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-medium bg-brand-950 text-brand-300 border border-brand-800">
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse"></span>
                   Processing {activeItemName || 'Photo'}
                 </span>
               )}
             </h3>
-            <p className="text-xs text-zinc-400">
+            <p className="text-xs text-stone-400">
               Deterministic wildlife species verification & microstock metadata generation
             </p>
           </div>
@@ -85,9 +85,9 @@ export const AutomationNodeGraph: React.FC<AutomationNodeGraphProps> = ({
         <button
           id="btn-toggle-pipeline-rules"
           onClick={() => setShowGuidelines(!showGuidelines)}
-          className="flex items-center gap-1.5 text-xs text-zinc-300 hover:text-white px-2.5 py-1 rounded-lg bg-zinc-800/80 hover:bg-zinc-800 border border-zinc-700/60 transition-colors"
+          className="flex items-center gap-1.5 text-xs text-stone-300 hover:text-white px-2.5 py-1 rounded-lg bg-stone-800/80 hover:bg-stone-800 border border-stone-700/60 transition-colors"
         >
-          <Info className="w-3.5 h-3.5 text-emerald-400" />
+          <Info className="w-3.5 h-3.5 text-brand-400" />
           <span>System Prompt Guidelines</span>
           {showGuidelines ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
         </button>
@@ -103,30 +103,30 @@ export const AutomationNodeGraph: React.FC<AutomationNodeGraphProps> = ({
                 id={node.id}
                 className={`flex flex-col p-3 rounded-xl border transition-all duration-300 relative ${
                   node.active
-                    ? 'bg-emerald-950/40 border-emerald-500/60 text-white shadow-lg shadow-emerald-950/50'
+                    ? 'bg-brand-950/40 border-brand-500/60 text-white shadow-lg shadow-brand-950/50'
                     : node.done
-                    ? 'bg-zinc-800/60 border-zinc-700/80 text-zinc-200'
-                    : 'bg-zinc-900/60 border-zinc-800 text-zinc-500'
+                    ? 'bg-stone-800/60 border-stone-700/80 text-stone-200'
+                    : 'bg-stone-900/60 border-stone-800 text-stone-500'
                 }`}
               >
                 <div className="flex items-center justify-between mb-1.5">
                   <div
                     className={`w-7 h-7 rounded-lg flex items-center justify-center ${
                       node.active
-                        ? 'bg-emerald-500 text-zinc-950 animate-pulse'
+                        ? 'bg-brand-500 text-stone-950 animate-pulse'
                         : node.done
-                        ? 'bg-emerald-900/60 text-emerald-300 border border-emerald-700/50'
-                        : 'bg-zinc-800 text-zinc-400'
+                        ? 'bg-brand-900/60 text-brand-300 border border-brand-700/50'
+                        : 'bg-stone-800 text-stone-400'
                     }`}
                   >
                     {node.done ? <Check className="w-4 h-4 stroke-[3]" /> : <Icon className="w-4 h-4" />}
                   </div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-400">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-stone-400">
                     {node.active ? 'Running' : node.done ? 'Verified' : 'Ready'}
                   </span>
                 </div>
-                <div className="font-semibold text-xs text-zinc-100">{node.title}</div>
-                <div className="text-[11px] text-zinc-400 truncate">{node.subtitle}</div>
+                <div className="font-semibold text-xs text-stone-100">{node.title}</div>
+                <div className="text-[11px] text-stone-400 truncate">{node.subtitle}</div>
               </div>
             </React.Fragment>
           );
@@ -135,27 +135,27 @@ export const AutomationNodeGraph: React.FC<AutomationNodeGraphProps> = ({
 
       {/* Collapsible Guidelines Box */}
       {showGuidelines && (
-        <div id="pipeline-guidelines-box" className="mt-4 pt-4 border-t border-zinc-800 text-xs text-zinc-300 space-y-2 relative z-10 animate-in fade-in duration-200">
-          <div className="font-semibold text-zinc-200 flex items-center gap-1.5">
-            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+        <div id="pipeline-guidelines-box" className="mt-4 pt-4 border-t border-stone-800 text-xs text-stone-300 space-y-2 relative z-10 animate-in fade-in duration-200">
+          <div className="font-semibold text-stone-200 flex items-center gap-1.5">
+            <ShieldCheck className="w-4 h-4 text-brand-400" />
             <span>Exact Target Validation Criteria Configured:</span>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 bg-zinc-950/60 p-3 rounded-xl border border-zinc-800/80">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 bg-stone-950/60 p-3 rounded-xl border border-stone-800/80">
             <div className="space-y-1">
-              <span className="text-emerald-400 font-semibold font-mono">1. Title: 5 to 15 Words</span>
-              <p className="text-zinc-400 text-[11px]">
+              <span className="text-brand-400 font-semibold font-mono">1. Title: 5 to 15 Words</span>
+              <p className="text-stone-400 text-[11px]">
                 Highlights subject, exact species behavior (soaring, perched, hunting), and environment in professional English.
               </p>
             </div>
             <div className="space-y-1">
-              <span className="text-emerald-400 font-semibold font-mono">2. Description: 25 to 50 Words</span>
-              <p className="text-zinc-400 text-[11px]">
+              <span className="text-brand-400 font-semibold font-mono">2. Description: 25 to 50 Words</span>
+              <p className="text-stone-400 text-[11px]">
                 Explains subject, action, lighting conditions, photographic composition, and high commercial potential.
               </p>
             </div>
             <div className="space-y-1">
-              <span className="text-emerald-400 font-semibold font-mono">3. Keywords: 30 to 45 Items</span>
-              <p className="text-zinc-400 text-[11px]">
+              <span className="text-brand-400 font-semibold font-mono">3. Keywords: 30 to 45 Items</span>
+              <p className="text-stone-400 text-[11px]">
                 Scientific genus/species, common names, behavior, environment, lighting, and buyer search terms (predator, wilderness, freedom).
               </p>
             </div>

@@ -1,1 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+
+  /* WildStock brand — deep pine/forest green, replaces generic SaaS emerald */
+  --color-brand-50: #f2f6ef;
+  --color-brand-100: #e1eadb;
+  --color-brand-200: #c4d6ba;
+  --color-brand-300: #9fbc8d;
+  --color-brand-400: #789c65;
+  --color-brand-500: #557f45;
+  --color-brand-600: #416434;
+  --color-brand-700: #34502b;
+  --color-brand-800: #2b4025;
+  --color-brand-900: #24351f;
+  --color-brand-950: #121d0f;
+
+  /* Raptor-eye gold — sparing premium accent */
+  --color-gold-50: #fdf8ec;
+  --color-gold-100: #faecc8;
+  --color-gold-200: #f4d68d;
+  --color-gold-300: #ecbc55;
+  --color-gold-400: #e0a331;
+  --color-gold-500: #cc8726;
+  --color-gold-600: #a8681f;
+  --color-gold-700: #854f1e;
+  --color-gold-800: #6d411f;
+  --color-gold-900: #5c371e;
+  --color-gold-950: #351c0e;
+}
+
+body {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
